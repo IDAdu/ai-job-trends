@@ -2083,12 +2083,9 @@
         <ul class="sub">
           <li><a href="#part3-1">3.1 AI 原生小公司：同一套卡点，相反的起点</a></li>
           <li><a href="#part3-2">3.2 Anthropic：从招聘到工作流的极致样本</a></li>
-          <li><a href="#part3-3">3.3 治理操作系统：4 家的做法与共用机制</a></li>
-          <li><a href="#part3-4">3.4 招聘动作对照：4 家公开 JD 里的 AI 新岗位</a></li>
-          <li><a href="#part3-5">3.5 回到问题：大组织复制得了吗</a></li>
+          <li><a href="#part3-3">3.3 大公司做了什么（Amazon / Google / Meta / Salesforce）</a></li>
         </ul>
       </li>
-      <li><a href="#conclusion">写在最后</a></li>
       <li><a href="#appendix">附录 · 外部监管与标准地图</a></li>
       <li><a href="#archive">核心引用报告档案</a></li>
       <li><a href="#refs">参考资料</a>
@@ -3118,7 +3115,7 @@
       <h2>大组织复制得了小团队的<em>AI 提效</em>吗</h2>
       <p class="part-lede">前两部分是基于外部调研的宏观观察。这一节换一个更具体的出发点：<strong>真正把 AI 提效跑出来的样本，几乎都是小团队和 AI 原生公司</strong>——Anthropic 用 30–40 人的产品团队撑起 $30B+ 年收入，一批 AI 原生小公司在采购、法务这些场景直接做出几倍效率。那么问题来了：万人级的大组织，能把这套小团队的提效模式复制过去吗？</p>
 
-      <p>回答顺序是：先看小团队到底做对了什么（<a href="#part3-1">3.1</a> AI 原生小公司、<a href="#part3-2">3.2</a> Anthropic），再回到大组织、看它们在同一套卡点上做了什么、卡在哪（<a href="#part3-3">3.3</a> 四家万人级公司、<a href="#part3-4">3.4</a> 招聘动作），最后把两边摆到一起、给一个有前提的判断（<a href="#part3-5">3.5</a>）。分析框架沿用 <a href="#part2-2">2.2</a> 那张"三层卡点"冰山图；第一层外部压力是不可逾越的合规底线，本篇不展开，详见<a href="#appendix" style="color: var(--clay); font-weight: 600;">附录</a>。</p>
+      <p>回答顺序是：先看小团队到底做对了什么（<a href="#part3-1">3.1</a> AI 原生小公司、<a href="#part3-2">3.2</a> Anthropic），再回到大组织、看它们在同一套卡点上做了什么（<a href="#part3-3">3.3</a> 大公司做了什么）。分析框架沿用 <a href="#part2-2">2.2</a> 那张"三层卡点"冰山图；第一层外部压力是不可逾越的合规底线，本篇不展开，详见<a href="#appendix" style="color: var(--clay); font-weight: 600;">附录</a>。</p>
 
       <div class="sub-section" id="part3-1">
         <h3><span class="num">3.1</span>AI 原生小公司：同一套卡点，相反的起点</h3>
@@ -3130,57 +3127,63 @@
         <p style="margin-top: 18px;">下面三家只深挖最具差异化的<strong>第二层 · 内部困难（变更管理 · 数据质量 · 流程设计）和第三层 · 结构性压力（谁能同时决定流程 / 数据 / 背锅，即不同角色的权责利关系）</strong>——这两层恰恰最能看出"从零起步"与"背着历史包袱"的活法差异。</p>
 
         <div class="co-block">
-          <p class="co-name">GC AI<span class="co-tag"> · 法务 AI 平台</span></p>
-          <p class="co-sig">规模信号（截至 2026 年初）：创始人 Cecilia Ziniti 曾三次出任公司总法律顾问（Anki / BloomTech / Replit）；<strong>1,700+ 个内部法务团队</strong>在用（含 50+ 家上市公司、25 家独角兽）；在 100+ 活跃客户调研中，法务团队平均<strong>每周省 14 小时</strong>、外部律师费 −14%、相比通用 AI 工具准确率 +21%；主用 Claude（Sonnet 主力、Opus 处理复杂推理），通过 SOC 2 Type II / SOC 3 认证、GDPR 合规<a class="fn" href="#fn56">[56]</a><a class="fn" href="#fn39">[39]</a></p>
-          <p><span class="co-pt">第二层 · 内部困难。</span>法务的内部困难集中在"机构知识怎么组织"——大量判断散在资深律师脑子里、历史合同里、动辄十万词元的大文档里。GC AI 自建知识管理系统专门处理这种大文档集，再用一条贯穿网页端、Word、Google Drive 的"智能层"，让公司专属上下文和审查规则手册跨界面带着走；并把企业级数据治理（数据不用于训练、SOC 2 Type II / SOC 3、GDPR 合规）做成默认，而不是让每个客户自己去谈<a class="fn" href="#fn39">[39]</a><a class="fn" href="#fn56">[56]</a>。</p>
-          <p><span class="co-pt">第三层 · 结构性压力。</span>法务的决策权难题是"判断标准锁在个别资深律师脑子里，人一走标准就走"。GC AI 把团队级一致性做进系统：共享审查规则手册 + 公司专属审查标准，让"什么条款可接受、风险容忍度多高、怎么措辞"变成全团队可复用的资产。一个被反复引用的结果是——"不给法务团队加人，就吸收了 30% 的交易量增长"<a class="fn" href="#fn39">[39]</a>。</p>
-          <p><span class="co-gd">好处是</span>——大公司啃"数据组织 + 判断标准"要靠重型工程、还要一个有权拍板的主导人来拉通，GC AI 因为只做法务这一个垂直场景，把这两件事直接做进产品。这正是 MIT NANDA 说的大公司 95% 零回报根因（工具不记忆、不随上下文适配）<a class="fn" href="#fn29">[29]</a>，在小公司这边被产品化解掉的地方。</p>
-          <table class="data-table" style="margin-top: 14px;">
-            <thead><tr><th style="width:96px;">困难层</th><th>大公司怎么做</th><th>GC AI 怎么做</th></tr></thead>
-            <tbody>
-              <tr><td class="role">第二层 · 内部困难</td><td>靠敏感度标签、角色权限控制等重型工程，慢慢把机构知识接进权限体系</td><td>只做法务一个垂直场景，把知识管理 + 数据零留存直接做进产品，客户不必重搭</td></tr>
-              <tr><td class="role">第三层 · 结构性压力</td><td>判断标准锁在资深人和主导人身上，人一走标准就走</td><td>把审查标准 / 规则手册写进系统，判断成为全团队可复用资产</td></tr>
-            </tbody>
-          </table>
-          <p class="co-sign"><strong>招牌：把治理和机构知识做成产品。</strong>大公司补认证，它直接卖治理。</p>
-        </div>
-
-        <div class="co-block">
           <p class="co-name">Duvo<span class="co-tag"> · 采购 / 供应链智能体</span></p>
-          <p class="co-sig">规模信号：全栈基于 Claude + Agent SDK + MCP + 界面操作（让智能体像人一样操作界面），每次接口调用都跑在数据零留存模式下。为 Rohlik Group <strong>上线第一周即跑出 €1.45M 年化节省</strong>（120+ 个单品、15+ 家供应商的持续比价 + 自动触达供应商），三个月累计 <strong>€2.8M+</strong>；年度供应商谈判缩短约 1 个月、约 80% 自动化；促销搭建 −65~70%，供应商催单 −50~70%，供应链可用率两周内 78% → 93%<a class="fn" href="#fn57">[57]</a><a class="fn" href="#fn40">[40]</a></p>
-          <p><span class="co-pt">第二层 · 内部困难。</span>采购 / 供应链的内部困难，多半卡在"系统异构"——ERP、供应商门户、价格表分散在十几个老系统里，传统做法要先等 IT 部门排期把接口一个个打通。Duvo 绕开了这一步：智能体直接操作这些系统的真实界面，像人一样点按读写，不等 IT 建接口<a class="fn" href="#fn40">[40]</a><a class="fn" href="#fn57">[57]</a>。</p>
-          <p>它还坚持"一个任务交给一个能力完整的智能体从头管到尾"，避免多个智能体交接时上下文丢失；全栈押注 Claude + Agent SDK 编排跨工作流，换来一致的安全模型和更少的集成缝。落到 Rohlik 的数字上：上线第一周就跑出 €1.45M 年化节省，三个月累计 €2.8M+；促销搭建时间 −65~70%，供应商催单 −50~70%，供应链可用率两周内从 78% 升到 93%<a class="fn" href="#fn57">[57]</a>。</p>
-          <p><span class="co-gd">好处是</span>——大公司要花几年、靠重建数据架构才能打通的系统异构问题，Duvo 用"界面层 + 单个智能体端到端"绕过，把第二层最重的那块成本直接跳过。当然这条路也有边界：界面操作比接口脆，依赖目标系统界面稳定，规模化时仍要面对可靠性工程。</p>
-          <p><span class="co-pt">第三层 · 结构性压力。</span>Duvo 的放权很克制：高风险动作必须人工批准。但它真正巧的地方在第二步——人一旦拍板，智能体就把这个决定固化下来供后续复用，于是"系统逐渐积累起原来只存在于人脑里的运营判断"<a class="fn" href="#fn40">[40]</a>。</p>
-          <p>这把第三层和"组织记忆"两个问题用同一个机制一起解了：放权不再是一次性的"放或不放"，而是每一次人审都在给系统喂一条可复用的判断规则——决策权留在人手里，而判断的沉淀落到系统里。</p>
-          <p><span class="co-gd">好处是</span>——这恰恰是大公司最缺的。Part 02 指出大公司头号脆弱点是"主导人一换、组织记忆就走"；Duvo 这种"人审一次、机器记一辈子"的机制，正是把决策从"事件"变成"资产"。它也解释了为什么 AI 原生小公司天然更靠近 Stanford 说的升级式放权（中位 +71%）而非审批式（+30%）——因为它没有那层把放权拖回事事人批的组织阻力。</p>
+          <p class="co-sig">Duvo 提供基于 Claude + Agent SDK + MCP + 界面操作（让智能体像人一样操作界面），每次接口调用都跑在数据零留存模式下。为客户 Rohlik Group（欧洲最大在线生鲜电商，年收入 €15 亿+，数千个挂钩大宗商品的 SKU）上线第一周，即跑出 €1.45M 年化节省（120+ 个单品、15+ 家供应商的持续比价 + 自动触达供应商），三个月累计 €2.8M+；年度供应商谈判缩短约 1 个月、约 80% 自动化；促销搭建 −65~70%，供应商催单 −50~70%，供应链可用率两周内 78% → 93%。<a class="fn" href="#fn57">[57]</a><a class="fn" href="#fn40">[40]</a></p>
           <table class="data-table" style="margin-top: 14px;">
-            <thead><tr><th style="width:96px;">困难层</th><th>大公司怎么做</th><th>Duvo 怎么做</th></tr></thead>
+            <thead><tr><th colspan="2">大型组织会面临的困难</th><th style="width:36%;">Duvo 的实践</th></tr></thead>
             <tbody>
-              <tr><td class="role">第二层 · 内部困难</td><td>花几年重建数据架构、等 IT 把老系统接口一个个打通</td><td>智能体直接操作老系统界面，不必等接口</td></tr>
-              <tr><td class="role">第三层 · 结构性压力</td><td>放权常被合规拖回"事事人批"（审批式，中位 +30%）</td><td>高风险人审一次、智能体固化复用（偏升级式，中位 +71%）</td></tr>
+              <tr>
+                <td style="width:118px; vertical-align: top;"><strong>第二层 · 内部困难</strong><br><span style="font-size:11px; color:var(--ink-mute);">变更管理 · 数据质量 · 流程设计</span></td>
+                <td style="vertical-align: top;">采购 / 供应链的内部困难，多半卡在"系统异构"。历史原因导致 ERP、供应商门户、价格表等数据，分散在十几个不同的老系统里，传统做法要先等 IT 部门排期把接口一个个打通。</td>
+                <td style="vertical-align: top;">绕开系统打通，智能体直接操作这些系统的真实界面，像人一样点按读写，不等 IT 建接口。这样可以避免多个智能体交接时的上下文丢失。</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;"><strong>第三层 · 结构性压力</strong><br><span style="font-size:11px; color:var(--ink-mute);">流程 / 数据 / 责任（背锅）</span></td>
+                <td style="vertical-align: top;">每一次决策，都需要合规的"事事人批"。</td>
+                <td style="vertical-align: top;">高风险动作还是必须人工批准。人一旦拍板，智能体就把这个决定固化下来供后续复用，逐渐系统性地积累原来只存在于人脑里的运营判断。</td>
+              </tr>
             </tbody>
           </table>
-          <p class="co-sign"><strong>招牌：放权阶梯 + 决策沉淀。</strong>人审一次，机器记一辈子。</p>
         </div>
 
         <div class="co-block">
-          <p class="co-name">HumanLayer<span class="co-tag"> · YC F24 · 智能体基建</span></p>
-          <p class="co-sig">规模信号：创始人 Dexter Horthy 于 2025.04 发布《12-Factor Agents》方法论后走红，成为上下文工程的奠基参考；现产品 <strong>CodeLayer</strong> 用并行工作区 + 云端执行单元同时跑多个 Claude 会话。YC F24，约 6 人团队，累计融资约 <strong>$500K</strong>（YC 参投，2024 年种子轮）<a class="fn" href="#fn58">[58]</a><a class="fn" href="#fn41">[41]</a></p>
-          <p><span class="co-pt">第二层 · 内部困难。</span>创始人 Dexter Horthy 最关键的洞察，正好戳中第二层：一个工程师会用 AI 还不够；<strong>"一旦多人一起写 AI 代码，就变成沟通、协作、工具、管理问题，你得把团队建软件的方式整个重新接线"</strong>。也就是说，内部困难不是大公司专属，只是小公司还没到那个规模。</p>
-          <p>它的产品演化就是这条洞察的落地：从《12-Factor Agents》（2025.04 发布后走红、成为上下文工程的奠基参考）到 CodeLayer——后者用并行工作区 + 云端执行单元让团队同时跑多个 Claude 会话，本质是在为"多人协作写 AI 代码"重建工具和流程<a class="fn" href="#fn41">[41]</a><a class="fn" href="#fn58">[58]</a>。</p>
-          <p><span class="co-gd">好处是</span>——HumanLayer 替所有小公司预演了"长大那一刻"：它证明第二层（变更管理、流程 / 工具重设计）会在团队规模一上来时必然出现，撞的是和大公司一模一样的那堵协作墙。提前把协作方式产品化，等于把这块成本前置消化掉。</p>
-          <p><span class="co-pt">第三层 · 结构性压力。</span>单人或极小团队时，创始人就是决策中枢，决策权天然合一——这正是 AI 原生小公司相对大公司的结构性红利（大公司要靠一个主导人升到一把手层面、写进考核目标才能跨部门）。</p>
-          <p>但 HumanLayer 的核心信条恰恰提醒：这种合一是规模红利、不是可永久持有的优势。规模一上来，协作和管理立刻成为新瓶颈，决策权又会重新变得分散——于是它把"人在环审批"做成产品基建（最早的版本就是在 Slack 里加一个人工审批步骤，CodeLayer 则用确定性的审批闸门），把"谁该在什么节点拍板"从口头约定变成系统里的确定性闸门<a class="fn" href="#fn41">[41]</a><a class="fn" href="#fn58">[58]</a>。</p>
-          <p><span class="co-gd">好处是</span>——这反过来证明了"决策权合一"对任何组织都只是阶段性的：小公司迟早要像大公司一样，显式地把决策权和审批节点设计进系统。把人在环做成基建而不是制度口号，等于提前为第三层备好了答案。</p>
+          <p class="co-name">HumanLayer<span class="co-tag"> · 智能体基建</span></p>
+          <p class="co-sig">创始人 Dexter Horthy 于 2025.04 发布《12-Factor Agents》方法论后走红，成为上下文工程的奠基参考；CodeLayer 用并行工作区 + 云端执行单元同时跑多个 Claude 会话。<a class="fn" href="#fn58">[58]</a><a class="fn" href="#fn41">[41]</a></p>
           <table class="data-table" style="margin-top: 14px;">
-            <thead><tr><th style="width:96px;">困难层</th><th>大公司怎么做</th><th>HumanLayer 怎么做</th></tr></thead>
+            <thead><tr><th colspan="2">大型组织会面临的困难</th><th style="width:36%;">HumanLayer 的实践</th></tr></thead>
             <tbody>
-              <tr><td class="role">第二层 · 内部困难</td><td>规模一大才被动撞上协作 / 流程重设计成本</td><td>把"多人协作写 AI 代码"的工具和流程提前产品化</td></tr>
-              <tr><td class="role">第三层 · 结构性压力</td><td>决策权分散多部门，要靠主导人跨部门拉通</td><td>单人即决策中枢（阶段红利），但把人在环审批做成确定性闸门基建</td></tr>
+              <tr>
+                <td style="width:118px; vertical-align: top;"><strong>第二层 · 内部困难</strong><br><span style="font-size:11px; color:var(--ink-mute);">变更管理 · 数据质量 · 流程设计</span></td>
+                <td style="vertical-align: top;">一旦多人一起写 AI 代码，就变成沟通、协作、工具、管理问题。也就是说，内部困难不是大公司专属，协作墙的管理困境必然出现。</td>
+                <td style="vertical-align: top;">把"多人协作写 AI 代码"的工具和流程提前产品化。将整个开发流程围绕"上下文管理"来设计，这其实是围绕大语言模型特征去进行研发流程的重新构建。</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;"><strong>第三层 · 结构性压力</strong><br><span style="font-size:11px; color:var(--ink-mute);">流程 / 数据 / 责任（背锅）</span></td>
+                <td style="vertical-align: top;">单人或极小团队时，创始人就是决策中枢，决策权天然合一，这是 AI 原生公司相对大公司的结构性红利。但组织规模一上来，决策权又会变得分散，跨部门、多部门事项还是要靠主导人跨部门拉通，协作和管理一定会成为新的瓶颈。</td>
+                <td style="vertical-align: top;">把"human in loop"做成产品基建（最早的版本就是在 Slack 里加一个人工审批步骤，CodeLayer 则用确定性的审批闸门），把"谁该在什么节点拍板"从口头约定变成系统里的确定性闸门。</td>
+              </tr>
             </tbody>
           </table>
-          <p class="co-sign"><strong>招牌：把"人在环审批"和"团队协作"当成产品本身。</strong>它替所有小公司预演了长大那一刻。</p>
+        </div>
+
+        <div class="co-block">
+          <p class="co-name">GC AI<span class="co-tag"> · 法务 AI 平台</span></p>
+          <p class="co-sig">创始人 Cecilia Ziniti 曾三次出任多家大公司总法律顾问（Anki / BloomTech / Replit）。现在的产品有 1,700+ 个内部法务团队在用（含 80+ 家上市公司、25 家独角兽），累计跑了 400 万+ 次提问、为客户省回 60 万+ 小时法务工作；技术上多模型后端，与 Anthropic、OpenAI 均签数据零留存。<a class="fn" href="#fn56">[56]</a><a class="fn" href="#fn39">[39]</a></p>
+          <table class="data-table" style="margin-top: 14px;">
+            <thead><tr><th colspan="2">大型组织会面临的困难</th><th style="width:36%;">GC AI 的实践</th></tr></thead>
+            <tbody>
+              <tr>
+                <td style="width:118px; vertical-align: top;"><strong>第二层 · 内部困难</strong><br><span style="font-size:11px; color:var(--ink-mute);">变更管理 · 数据质量 · 流程设计</span></td>
+                <td style="vertical-align: top;">法务职能的内部困难集中在"信息过于分散"。大量判断散在资深律师脑子里、历史合同里、看不完的大文档里。</td>
+                <td style="vertical-align: top;">自建知识管理系统专门处理这种大文档集，再用一条贯穿网页端、Word、Google Drive 的"智能层"，让公司专属上下文和审查规则手册跨界面带着走，支持多智能体协同：检索法条 / 分析文档 / 综合成结构化法律分析分工进行。</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;"><strong>第三层 · 结构性压力</strong><br><span style="font-size:11px; color:var(--ink-mute);">流程 / 数据 / 责任（背锅）</span></td>
+                <td style="vertical-align: top;">法务的决策权难题是"判断标准锁在个别资深律师脑子里，人一走标准就走"。而这些核心数据资产，律师事务所和大企业的法务部都不可能允许被模型厂商拿去训练。</td>
+                <td style="vertical-align: top;">把团队级一致性做进系统：共享审查规则手册 + 公司专属审查标准，让"什么条款可接受、风险容忍度多高、怎么措辞"变成全团队可复用的资产；与 Anthropic、OpenAI 签数据零留存，保证"数据不被拿去训练、不长期留存"。</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -3240,70 +3243,13 @@
       </div>
 
       <div class="sub-section" id="part3-3">
-        <h3><span class="num">3.3</span>治理操作系统：4 家的做法与共用机制</h3>
-        <p>现在回到万人级大组织——面对同样的<strong>第二层（内部困难：变更管理 · 数据质量 · 流程设计）</strong>和<strong>第三层（结构性压力：谁能同时决定流程 / 数据 / 背锅）</strong>，它们做了什么？（难点都在冰山水下这两层，这里只挖这两层。）</p>
-
-        <p>往下读之前先点明一层区别：这 4 家本身就是 AI 供应商，所以下面看到的"治理操作系统"很大一部分，是它们把内部治理<strong>做成产品卖给客户</strong>的能力（对外）——这部分好查，却容易和"它们自己组织内部怎么转型"混为一谈。所以每家卡片末尾都补了一条<strong>「对内」</strong>，看它们拿自家几万人当试验场做了什么。需要诚实说明：对内信号大多集中在工程与客服的效率和流程重设计上，真正的内部数据架构改造，各家公开披露都很有限。</p>
-
-        <div class="co-block">
-          <p class="co-name">AWS</p>
-          <p class="co-sig">公开里程碑：2023.10 GenAI Security Scoping Matrix → 2024.11 Bedrock / Q / Textract / Transcribe 首批拿 ISO 42001<a class="fn" href="#fn24">[24]</a> → 2025 年底 Bedrock <strong>AgentCore</strong> 正式上线 → 2026.01 Security for Agentic AI 指南<a class="fn" href="#fn25">[25]</a> → 2026.05《在 AWS 上落地 ISO/IEC 42001 AIMS》白皮书<a class="fn" href="#fn52">[52]</a></p>
-          <p><span class="co-pt">第二层 · 内部困难。</span>Q Business 默认按文档的访问权限清单抓取——智能体回答时只能看到调用者本来就有权限看到的文档；要禁用这种权限抓取被定义成"特权操作"，必须管理员批准、写一份决策文档、再用服务控制策略显式拒绝才能关掉<a class="fn" href="#fn26">[26]</a>。这把"数据架构合规"从一份要工程师自觉遵守的规范，变成了云平台层面的强制默认值。</p>
-          <p>2025 年底上线的 Bedrock AgentCore 把同一思路推进到智能体运行时：每个用户会话拿到一个独立的微型虚拟机，计算、内存、文件系统全隔离，会话结束后整个虚拟机销毁、内存擦除，杜绝跨会话数据串味；需要长期保留的对话记忆走专门的 AgentCore Memory；身份则由 AgentCore Identity 托管——对接 Cognito / Okta / Entra ID，用令牌库加"最小够用授权"同时管住入站（谁能调用智能体）和出站（智能体替用户访问第三方接口）两个方向的授权<a class="fn" href="#fn52">[52]</a>。</p>
-          <p><span class="co-gd">好处是</span>——Deloitte 那 73% 的数据隐私担忧、MIT NANDA 把 95% 零回报归到"工具不会随上下文适配"<a class="fn" href="#fn29">[29]</a>，本质都是"数据架构没搭好"这块看不见的成本。AWS 的做法是把它一次性吃进平台默认值：企业不必为每个智能体重新设计权限继承、会话隔离、凭证管理，买服务就拿到了一套可外审的数据边界，而"做错事"（关掉权限抓取、放宽隔离）反而要走更高的审批摩擦。</p>
-          <p><span class="co-pt">第三层 · 结构性压力。</span>"负责任 AI 政策"不是挂在合规部门墙上的文件，而是直接嵌进 Bedrock 产品团队——产品经理就是治理责任人；AI 服务说明卡（Service Cards）把"我是谁、训练数据是什么、适用与不适用场景、已知局限"写进每个服务的产品描述，等于把"谁拍板、依据什么拍板"固化进产品文档。</p>
-          <p>到了智能体层，AgentCore 用"部署前必须先配好作用域身份权限和护栏"把决策权前移：一个智能体还没上线，它能动用哪些权限、受哪些护栏约束，就已经在部署配置里被钉死，而不是上线后再靠人盯。</p>
-          <p><span class="co-gd">好处是</span>——Stanford 那 35% 的阻力集中在法务 / 人力 / 风险 / 合规，根因是"没有任何角色同时握有改流程、管数据、背锅这三组授权"。AWS 的解法是干脆取消独立合规岗这个环节：产品决定即治理决定，三组授权被收进产品团队同一条决策路径。代价是这套高度依赖产品团队自身的治理素养，但对买它云服务的企业来说，等于继承了一套已经配好的决策结构。</p>
-          <p><span class="co-pt">对内 · 把自己当头号用户。</span>Amazon 内部用生成式 AI（Amazon Q）做了一轮大规模代码现代化——仅 Java 版本升级一项，就估算省下约 4,500 个开发者-年的工作量、合计超过 2.6 亿美元的效率收益；Amazon Q Developer 也成了内部最广泛使用的编码工具之一<a class="fn" href="#fn61">[61]</a>。先在自家几万名工程师身上跑通，再把同一套能力封进云产品卖出去。</p>
-          <p class="co-sign"><strong>招牌：治理即云能力。</strong>客户和企业内部的职能部门都不必从零想合规，按服务说明卡走即可。</p>
-        </div>
-
-        <div class="co-block">
-          <p class="co-name">Google / DeepMind</p>
-          <p class="co-sig">公开里程碑：2018.06 Google AI Principles → 2023 DeepMind Responsibility &amp; Safety Council → 2024.05 Frontier Safety Framework<a class="fn" href="#fn27">[27]</a> → 2025.02 更新 AI Principles → 2025.09 <strong>Frontier Safety Framework v3.0</strong><a class="fn" href="#fn53">[53]</a></p>
-          <p><span class="co-pt">第二层 · 内部困难。</span>Gemini in Workspace 的硬底线是"绝不越权"——它只检索登录用户本来有权限看到的内容，用户看不到的文档 / 邮件，Gemini 也取不到，不会因为接入 AI 就绕过 Workspace 既有的权限边界<a class="fn" href="#fn27">[27]</a>。</p>
-          <p>在这条底线之上，Google 又叠了两层企业控制：上下文感知访问按用户身份、设备合规状态、网络地址、地理位置、时间等上下文限定谁能用 Gemini / NotebookLM；再把数据防泄漏规则和上下文感知访问条件组合起来——只有当上下文条件满足时数据防泄漏规则才生效，从而精细控制复制、打印、上传 / 下载敏感内容，并能用分类标签加信息版权管理把被标记为敏感的数据直接挡在 Gemini 的检索范围之外<a class="fn" href="#fn27">[27]</a>。</p>
-          <p><span class="co-gd">好处是</span>——多数企业的真实安全策略从来不是"能不能看"这一维，而是"谁、用什么设备、从哪、什么时间、看什么"。Google 把 AI 的数据可见性直接接到这套已经跑了多年的多维访问控制上，省掉了为 AI 单独重建一套权限模型的不可见成本——这正是 Deloitte 73% 隐私担忧背后最难、又最不会出现在 ROI 表里的那部分工作。</p>
-          <p><span class="co-pt">第三层 · 结构性压力。</span>决策权按风险量级分流，是 Google 治理最鲜明的特征。常规 AI 用例走 DeepMind 的 Responsibility &amp; Safety Council，前沿模型走 AGI Safety Council，2025.09 的 Frontier Safety Framework v3.0 又把 Google Trust &amp; Compliance Council 拉进放行评审，形成多条独立审批通道<a class="fn" href="#fn53">[53]</a>。</p>
-          <p>v3.0 同时把"关键能力阈值（CCL）"细化——新增"有害操纵"（能在高风险情境下系统性、大幅改变人的信念与行为）和"抗关机 / 失控"两类；一旦模型逼近某个关键能力阈值，就触发对应告警阈值，团队必须做一份安全论证证明风险已被压到可接受，并经相应治理机构批准，模型才能正式发布，否则不放行<a class="fn" href="#fn53">[53]</a>。</p>
-          <p><span class="co-gd">好处是</span>——前沿研究和日常应用如果挤在同一条治理通道里，一定有一边被拖死：要么前沿评审拖垮常规上线节奏，要么常规流程的宽松标准放过了前沿风险。Google 的多轨分流让两个量级的决策互不挡路，相当于把"谁该为这个量级的风险拍板"按风险大小预先切好——这正面接上 Part 02 第三层"决策权悬空"的结构性难题，只是 Google 用委员会分层把它显式补上了。</p>
-          <p><span class="co-pt">对内 · 代码先交给 AI 写。</span>Pichai 在财报会上披露，Google 内部新代码里由 AI 生成的比例，从 2024.10 的约 25% 升到 2025.04 的 30% 以上<a class="fn" href="#fn62">[62]</a>。这不是某个孤立试点，而是把 AI 嵌进自家工程主干的结果——也是"流程重设计"在一家十几万人公司里最直接的量化信号。</p>
-          <p class="co-sign"><strong>招牌：治理即分流。</strong>把不同量级的风险拆开走不同路径，反而都跑得快。</p>
-        </div>
-
-        <div class="co-block">
-          <p class="co-name">Salesforce</p>
-          <p class="co-sig">公开里程碑：2018 Office of Ethical and Humane Use → 2024 Einstein Trust Layer / Agentforce → 2025.10 <strong>Agentforce 360</strong> 正式上线（首批 12,000 客户，建于 Hyperforce）→ 拟收购 Informatica 强化 Data 360 数据治理<a class="fn" href="#fn54">[54]</a></p>
-          <p><span class="co-pt">第二层 · 内部困难。</span>Agentforce 不新建权限模型，而是直接复用 Salesforce 已跑了 25 年的角色权限和共享规则——智能体在你的租户里"和人类用户共用同一套权限模型"，它能看到的数据范围就等于调用它的那个用户原本能看到的范围；Einstein Trust Layer 再在数据进大模型之前做个人信息 / 支付信息脱敏、毒性内容检测、数据零留存，并叠加属性权限（在角色之上再加地理、部门、合规状态等上下文判断）和审计日志<a class="fn" href="#fn28">[28]</a>。</p>
-          <p>2025.10 正式上线的 Agentforce 360 建在 Hyperforce 上做本地化数据驻留与合规；Salesforce 还计划把收购来的 Informatica 的数据集成、数据质量、治理与主数据管理并进 Data 360，给智能体喂一条统一、可追溯的数据管线<a class="fn" href="#fn54">[54]</a>。</p>
-          <p><span class="co-gd">好处是</span>——把"AI 能看什么"的合规直接焊在已经成熟 25 年的 CRM 权限体系上，等于把第二层那块最重的不可见成本一次性摊给了过去 25 年的积累，而不是在 AI 项目里从零重搭。这也是为什么 Salesforce 的智能体能较快进生产：数据边界本来就在，不必先打通。</p>
-          <p><span class="co-pt">第三层 · 结构性压力。</span>Salesforce 在这一层有两手。组织上，2018 年就成立了伦理与人道使用办公室（业界首批此类机构），并把 AI 信任委员会的评审节奏从行业常见的季度改成<strong>每两周一次</strong>——AI 迭代太快，季度评审本身会变成阻力源，双周让职能部门跟得上业务速度。</p>
-          <p>产品上，Agentforce 用护栏把"硬边界"写死：哪些话题绝不碰、哪些数据不能共享、到什么阈值必须升级给人。Salesforce 的 AI 可接受使用政策更直接规定"AI 不能在没有人做最终决定的情况下做法律或重要决策"，并允许配出"服务智能体不得批超过 $100 的退款、不得删除记录"这类具体护栏，到边界就升级给人审<a class="fn" href="#fn28">[28]</a><a class="fn" href="#fn59">[59]</a>。</p>
-          <p><span class="co-gd">好处是</span>——Stanford 那 35% 的阻力来自法务 / 人力 / 风险 / 合规，根子是这些职能部门既慢、又是唯一能拍板的人。Salesforce 一边用双周节奏把职能部门提速，一边用产品级护栏把"什么动作必须人审"前置成可配置规则，等于把"决策权该放到哪一档"从一次次开会变成系统里的一行配置——这正面接上 Part 02 第三层。</p>
-          <p><span class="co-pt">对内 · 拿自家客服开刀。</span>2025 年 Salesforce 把自己的客服支持团队从约 9,000 人减到约 5,000 人（Benioff 直言"我需要的人手更少了"），Agentforce 已能处理大约一半的支持工单；省下来的人没有简单裁掉，而是数百人被转岗去做销售、专业服务和客户成功<a class="fn" href="#fn63">[63]</a>。这是"流程重设计 + 变更管理"在自家组织里的真实版本——先用自己验证，再讲给客户听。</p>
-          <p class="co-sign"><strong>招牌：把职能部门从季度节奏拉到双周。</strong>AI 决策不再是职能部门卡住业务，而是职能部门跟得上业务的速度。</p>
-        </div>
-
-        <div class="co-block">
-          <p class="co-name">Meta</p>
-          <p class="co-sig">公开里程碑：2023.11 解散中央 Responsible AI 团队<a class="fn" href="#fn49">[49]</a> → 2023.12 Purple Llama<a class="fn" href="#fn48">[48]</a> → 2025.02 Frontier AI Framework<a class="fn" href="#fn47">[47]</a> → 2025.04 LlamaCon 发布 Llama Guard 4 / LlamaFirewall / Prompt Guard 2<a class="fn" href="#fn55">[55]</a> → 2025.07 公开拒签欧盟 GPAI 准则<a class="fn" href="#fn50">[50]</a></p>
-          <p><span class="co-pt">第二层 · 内部困难。</span>Meta 走的是和前三家相反的路：不靠云服务托管，而是把数据主权还给企业。Llama 开放权重，企业可以把模型下载到自己的服务器或私有云上跑（本地或私有云部署），输入和输出全部留在自己的基础设施内、不出网——这是医疗、金融、国防等强监管行业最偏好的路径，因为它从根上消除了"数据要交给外部接口"这件事<a class="fn" href="#fn60">[60]</a>。</p>
-          <p>在自托管之上，Meta 又把"安全原语"做成可直接接入的组件：2025.04 LlamaCon 升级的 Llama Guard 4 是跨文本 + 图像的统一过滤层，企业不必自建审核模型<a class="fn" href="#fn55">[55]</a>；Llama Defenders Program 还放出自动敏感文档分类工具（给内部文档自动打安全分类标签）和 AI 生成内容 / 音频检测器，首批合作方包括 ZenDesk、Bell Canada、AT&amp;T<a class="fn" href="#fn60">[60]</a>。</p>
-          <p><span class="co-gd">好处是</span>——第二层最重的不可见成本是"数据架构 + 数据治理"，而"开放权重 + 自托管"把其中最敏感的一块（数据出境 / 驻留）直接绕开：数据主权天然留在企业手里。代价是企业要自己扛下部署、运维、打补丁的工程量——Meta 把"绕开外部接口"的自由给了你，也把活儿留给了你。</p>
-          <p><span class="co-pt">第三层 · 结构性压力。</span>2023.11，Meta 解散了中央负责任 AI 团队，把成员分散进生成式 AI 产品线和 AI 基础设施团队，官方理由是"贴近核心产品开发、增强协作"——日常治理由此下沉到各产品团队自己<a class="fn" href="#fn49">[49]</a>。</p>
-          <p>与此同时，Meta 只把"前沿模型的高风险放行"这一件事上收到 Frontier AI Framework 的高层评估：框架聚焦化生、网络安全、失控三类灾难性风险，按"临界 / 高"两档阈值判断模型是否放行，到"临界"且无法缓解就停止开发<a class="fn" href="#fn47">[47]</a>。换句话说，决策权被切成两段——日常嵌入产品团队，灾难性风险留中央闸门。</p>
-          <p><span class="co-gd">好处是</span>（与代价并存）——好处是这比设一个中央委员会更激进的"嵌入式"治理，决策不必绕一圈回到中央；代价是失去了一个集中担责的主体，当年解散负责任 AI 团队就被外界质疑会削弱监督，而 2025.07 Meta 成为唯一公开拒签欧盟 GPAI 行为准则的大型 AI 公司<a class="fn" href="#fn50">[50]</a>，正是这条"自定义、不外包"路线在治理上最具争议的一面。</p>
-          <p><span class="co-pt">对内 · 给工程师定 AI 写码考核指标。</span>Meta 内部为 2026 上半年定下硬指标：65% 的工程师要用 AI 写出超过 75% 的提交代码；Zuckerberg 进一步预测，12–18 个月内自家大部分相关代码将由 AI 写成，并把整个公司往"AI 原生"方向重组<a class="fn" href="#fn64">[64]</a>。换句话说，Meta 把"用 AI 重做工作流"直接写进了对工程师的考核。</p>
-          <p class="co-sign"><strong>招牌：治理即开源。</strong>别人卖认证，它送工具——把安全评测、内容过滤、风险阈值全部开源 / 公开。</p>
-        </div>
-
-        <h4 style="margin-top: 40px;">4 家对内管理新做法一览</h4>
-        <p>这 4 家在自家组织内部，不只是"用 AI 工具"，更在管理机制上做了新动作——把它们摆在一起看，能直观看到 AI 时代企业内部管理（尤其是决策机制）正在怎么变。（各家用了哪些 AI 产品、对外卖什么，不在此表。）</p>
+        <h3><span class="num">3.3</span>大公司做了什么（Amazon / Google / Meta / Salesforce）</h3>
+        <p>回到万人级大组织，看他们面对同样的<strong>第二层（内部困难：变更管理 · 数据质量 · 流程设计）</strong>和<strong>第三层（结构性压力：谁能同时决定流程 / 数据 / 背锅）</strong>都在做了什么。</p>
 
         <table class="data-table">
           <thead>
             <tr>
-              <th style="width:110px;">维度</th>
+              <th style="width:96px;">维度</th>
               <th>Amazon</th>
               <th>Google</th>
               <th>Meta</th>
@@ -3312,255 +3258,39 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>管理新做法</strong></td>
-              <td>一把手定调"更小的团队做更多" + 压管理层级</td>
-              <td>组织扁平化，管理者转回一线</td>
-              <td>把"用 AI"写进考核 + 往 AI 原生重组</td>
-              <td>不裁而转岗 + 改变招聘结构</td>
-            </tr>
-            <tr>
               <td><strong>具体动作</strong></td>
-              <td>Jassy 2025.6 全员 memo：明确 AI 未来几年会缩减总体岗位，要求人人学用 AI、用"更精简的团队"做事；延续 2024 memo 推高"一线 : 管理者"比例<a class="fn" href="#fn65">[65]</a></td>
-              <td>2024.12 全员会砍掉 10% 的 manager / director / VP 岗，多数管理者转为个人贡献者；延续 2022 起"效率提升 20%"目标<a class="fn" href="#fn66">[66]</a></td>
-              <td>给工程师定 AI 写码硬指标并纳入绩效；公司往"AI 原生"重组<a class="fn" href="#fn64">[64]</a></td>
-              <td>常规支持交给 AI 后不再回填支持岗，把数百名支持员工转岗到专业服务 / 销售 / 客户成功；加招销售卖 AI<a class="fn" href="#fn63">[63]</a></td>
+              <td>25.6 全员 memo：明确 AI 未来几年会缩减总体岗位，要求人人学用 AI、用"更精简的团队"做事；延续 2024 memo 推高"一线 : 管理者"比例</td>
+              <td>24.12 全员会上说，要砍掉 10% 的 manager / director / VP 岗位，多数管理者转为个人贡献者；延续 2022 起的"效率提升 20%"目标</td>
+              <td>给工程师定 AI 写码硬指标并纳入绩效；公司往"AI 原生"重组</td>
+              <td>常规支持交给 AI 后，不再回填支持岗。25 年初，把数百名支持员工转岗到专业服务 / 销售 / 客户成功。</td>
             </tr>
             <tr>
               <td><strong>决策机制</strong></td>
               <td>开"反官僚"邮箱让员工举报多余审批（一年约 1,500 封 → 改 455 个流程）；经理直属 ≥8 人（从 6 上调）；决策权下放一线、审批提速<a class="fn" href="#fn67">[67]</a></td>
-              <td>砍管理层、管理者转 IC，用扁平化换更快决策（"不靠加人解决问题"）<a class="fn" href="#fn66">[66]</a></td>
-              <td>解散中央 Responsible AI，把治理与决策权下沉到各产品线<a class="fn" href="#fn64">[64]</a></td>
-              <td>设 Office of Ethical &amp; Humane Use + 固定节奏的伦理 / Trust 复审委员会，给 AI 动作设人审节奏<a class="fn" href="#fn63">[63]</a></td>
+              <td>砍管理层、管理者转 IC，用扁平化换更快决策（"不靠加人解决问题"）</td>
+              <td>23.11 解散中央 Responsible AI，把治理与决策权下沉到各产品线</td>
+              <td>设 Office of Ethical &amp; Humane Use + 固定节奏的伦理 / Trust 复审委员会，给 AI 动作设人审节奏</td>
             </tr>
             <tr>
-              <td><strong>量化 · 公开表态</strong></td>
-              <td>要求 IC : manager 比例提升 ≥15%；"未来几年减少总体 corporate 岗位"</td>
-              <td>管理者数量同比少 35%；Pichai："不能每个问题都靠加人解决"</td>
-              <td>2026 H1 目标 65% 工程师用 AI 写出 &gt;75% 代码</td>
-              <td>支持人力 ~9,000 → ~5,000；Benioff："I need less heads"；数百人内部转岗</td>
+              <td><strong>量化考核 · 公开表态</strong></td>
+              <td>24.09 要求 IC : manager 比例提升 ≥15%；"未来几年减少总体 corporate 岗位"<a class="fn" href="#fn65">[65]</a></td>
+              <td>管理者数量，同比少 35%<a class="fn" href="#fn66">[66]</a></td>
+              <td>26.03，2026 H1 目标 65% 工程师用 AI 写出 &gt;75% 代码<a class="fn" href="#fn64">[64]</a></td>
+              <td>25.09，支持人力 9,000 砍到 5,000。<a class="fn" href="#fn63">[63]</a></td>
             </tr>
           </tbody>
         </table>
-        <p style="font-size: 11px; color: var(--ink-mute); font-style: italic;">本表只汇总各家在自家组织内部管理上的新做法（对内），不含其用了哪些 AI 工具或对外销售的 AI 产品。注：Amazon 的扁平化与"反官僚"，Jassy 本人称主要出于"敏捷与文化"、未直接归因 AI，此处作为 AI 时代企业提速的背景动作收录；Salesforce 复审委员会的具体节奏（曾传"双周"）暂未见官方确认，故只表述为"固定节奏"。数据基于各公司过去 1–2 年公开披露的财报会、内部 memo 与高管访谈。</p>
 
-        <div class="callout">
-          <div class="callout-label">Key Insight</div>
-          <p>三层卡点的破局从来不是"靠一个 AI 合规岗"——4 家公司各自在卡点上找到了一个组织杠杆：AWS 把治理打包进云服务，Google 把前沿模型和常规模型双轨分流，Salesforce 用双周节奏让 staff 跟得上业务，Meta 干脆把安全工具开源、让任何企业继承它的防护原语。<strong>4 种路径不互斥</strong>——多数公司同时用了几种，但每家都有一个最强项。万人组织真正的瓶颈不是"用哪个模型"，而是<strong>这套撬动 3 个卡点的组织杠杆有没有建起来，且有没有 sponsor 顶住</strong>。</p>
-        </div>
-
-        <h4 style="margin-top: 44px;">4 家共用的 3 套机制：治理的最小公约数</h4>
-        <p>把上面 4 家的做法抽象出来会发现：形态各异，但"操作系统"内部高度同构——共用 <strong>3 套机制</strong>（用例分级、数据权限继承、放权阶梯）。这是过去 3 年沉淀下来的"AI 治理的最小公约数"，外部标准全景见<a href="#appendix">附录</a>。</p>
-
-        <h4 id="part3-3-1" style="margin-top: 28px;">① 用例分级：把每个 AI 项目放进对应的审批通道</h4>
-        <p>万人组织最常见的反模式是把"开一个 AI 总结助手"和"上一个自动调薪模型"走同一道审批——前者其实人人可用，后者必须 CHRO 拍板。结果两边都被堵在同一个跨部门会议里。可观察到的有效做法是把 AI 用例按风险分成 4 档，让审批权配套下放：</p>
-
-        <table class="data-table">
-          <thead>
-            <tr><th style="width:130px;">等级</th><th>典型用例</th><th>审批方式</th></tr>
-          </thead>
-          <tbody>
-            <tr><td class="role">L0 · 个人效率</td><td>写邮件、总结公开资料、改 PPT 文案</td><td>直接开放，培训即可</td></tr>
-            <tr><td class="role">L1 · 内部低敏</td><td>会议纪要、内部知识库问答、代码辅助</td><td>部门负责人 + 数据规则</td></tr>
-            <tr><td class="role">L2 · 敏感业务</td><td>客户数据分析、经营分析、招聘筛选、财务预测</td><td>数据 Owner + 法务 / 安全标准模板审批</td></tr>
-            <tr><td class="role">L3 · 高风险 / 自动决策</td><td>授信、裁员建议、医疗判定、自动执行交易</td><td>AI 治理委员会专项审批 + 人工复核</td></tr>
-          </tbody>
-        </table>
-        <p style="font-size: 11px; color: var(--ink-mute); font-style: normal;">分级思路综合 NIST AI RMF Map / Measure 框架<a class="fn" href="#fn15">[15]</a> 与 ISO/IEC 42001 风险评估章节<a class="fn" href="#fn18">[18]</a>。L3 的"专项审批"对齐 EU AI Act 高风险 AI 系统的人类监督要求<a class="fn" href="#fn20">[20]</a>。</p>
-
-        <h4 id="part3-3-2" style="margin-top: 32px;">② 数据权限继承：AI 看不到用户本来看不到的</h4>
-        <p>Deloitte 那 73% 的隐私担忧<a class="fn" href="#fn6">[6]</a>，落到具体工程上，本质是一个最低底线问题：</p>
-        <blockquote>
-          AI 能看到的数据，不应超过当前用户本来有权限看到的数据。
-          <cite>Google / AWS / Salesforce 在 Gemini · Q Business · Agentforce 上共同采用的设计原则</cite>
-        </blockquote>
-        <p>这条原则在落地时被翻成"分层数据可用目录"——用一张表把哪些数据可以喂 AI、用什么模型、保留多久、谁能追责，全部写死：</p>
-
-        <table class="data-table">
-          <thead>
-            <tr><th style="width:170px;">数据层</th><th>处理方式</th></tr>
-          </thead>
-          <tbody>
-            <tr><td class="role">公开数据</td><td>可直接用于 AI 检索与总结</td></tr>
-            <tr><td class="role">内部普通数据</td><td>进内部知识库 / RAG，但保留访问权限继承</td></tr>
-            <tr><td class="role">敏感业务数据</td><td>脱敏 / 聚合 / 字段级权限 / 只读访问</td></tr>
-            <tr><td class="role">PII / 客户 / 员工数据</td><td>默认不入通用模型；需单独授权、日志、用途限制</td></tr>
-            <tr><td class="role">商业机密 / 战略数据</td><td>只进隔离环境，禁外部模型训练或长期留存</td></tr>
-          </tbody>
-        </table>
-        <p style="font-size: 11px; color: var(--ink-mute); font-style: normal;">数据分层对应 ISO/IEC 42001 的数据治理子条款<a class="fn" href="#fn18">[18]</a>，以及 Microsoft 内部 Copilot 治理实践中的 Sensitivity Labels 体系<a class="fn" href="#fn22">[22]</a>。</p>
-
-        <h4 id="part3-3-3" style="margin-top: 32px;">③ 放权阶梯：从草稿模式逐级走向自主执行</h4>
-        <p>在"AI 能做什么"这条线上，组织最容易犯的错是要么不放、要么全放。可观察到的稳健做法是切成四档，每往前一档都需要更多的监控、回滚和评估：</p>
-
-        <table class="data-table">
-          <thead>
-            <tr><th style="width:200px;">放权阶段</th><th>说明</th></tr>
-          </thead>
-          <tbody>
-            <tr><td class="role">Draft-only</td><td>AI 只生成草稿（报告、SQL、邮件、指标解释），人必须读、改、再用</td></tr>
-            <tr><td class="role">Human approval</td><td>AI 给建议，人点击确认后才执行</td></tr>
-            <tr><td class="role">Constrained action</td><td>AI 在限定范围内执行：只读查询、生成工单、草拟条款</td></tr>
-            <tr><td class="role">Autonomous low-risk</td><td>仅在低风险、可回滚、强监控的场景才允许自动执行</td></tr>
-          </tbody>
-        </table>
-        <p style="font-size: 11px; color: var(--ink-mute); font-style: normal;">放权阶梯对应 NIST AI RMF Manage 阶段的"go / no-go / monitor / rollback"决策框架<a class="fn" href="#fn15">[15]</a>。Salesforce Agentforce 的 Trust Layer<a class="fn" href="#fn28">[28]</a> 与 Microsoft 内部 Agent 365 都采用类似分级<a class="fn" href="#fn23">[23]</a>。</p>
-
+        <p style="margin-top: 18px;">需要注意的是：</p>
+        <ul style="margin: 8px 0 6px 24px; color: var(--ink-soft); line-height: 1.9;">
+          <li>这 4 家公司本身也是 AI 服务和产品供应商，我们需要抛开他们把 AI 产品卖给客户时的说法，重点关注他们自己在组织内部做了什么。这样的内部变革公开信息披露并不多，这里只放可信度高的动作。</li>
+          <li>按时间线去看，Google / Meta 早在 2022–2023 就以"效率"之名启动扁平化（早于 GenAI 普及）。Amazon 2024–2025 跟进扁平化动作，2025 才把改革的理由指向 AI。Salesforce / Meta 2025–2026 把岗位使用 AI 与考核动作落到具体数字上。</li>
+        </ul>
       </div>
 
-      <div class="sub-section" id="part3-4">
-        <h3><span class="num">3.4</span>招聘动作对照：4 家公开 JD 里的 AI 新岗位</h3>
-        <p>这套治理操作系统不只是组织结构图上的方框——它对应着<strong>过去 12 个月在这 4 家公司公开招聘页 / engineering blog / responsible AI 网页上反复出现的一批新岗位类别</strong>。把它们和 3.3 的治理机制对齐，能看到 Part 01 "新增岗位" 的另一面：万人组织正在为这套操作系统补真人。</p>
-
-        <table class="data-table">
-          <thead>
-            <tr><th style="width:170px;">角色类别</th><th>核心职责</th><th>对应治理机制</th><th>公开可见的公司</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="role">Responsible AI PM<span class="role-cn">负责任 AI 项目经理</span></td>
-              <td>牵头单一产品的 AI 风险评估，跑 Map / Measure 流程，协调研发、法务、安全</td>
-              <td>用例分级 + 外部标准对齐</td>
-              <td>Google · Salesforce · Meta</td>
-            </tr>
-            <tr>
-              <td class="role">AI Safety / AI Trust Engineer<span class="role-cn">AI 安全 / 信任工程师</span></td>
-              <td>实现 guardrails、prompt injection 防御、敏感信息过滤、agent quarantine 的工程落地</td>
-              <td>数据权限继承 + 工程安全</td>
-              <td>AWS · Salesforce · Google DeepMind · Meta</td>
-            </tr>
-            <tr>
-              <td class="role">Frontier Safety Researcher<span class="role-cn">前沿模型安全研究员</span></td>
-              <td>给前沿模型设风险阈值、能力评估、能力门控触发条件</td>
-              <td>前沿模型双轨审批</td>
-              <td>Google DeepMind · Meta · Anthropic（同行映射）</td>
-            </tr>
-            <tr>
-              <td class="role">AI Ethics Focal Point<span class="role-cn">业务单元 AI 伦理触发点</span></td>
-              <td>在所在产品团队做 AI 风险初筛，必要时升级到前沿模型评估</td>
-              <td>治理嵌入产品团队</td>
-              <td>Meta（RAI 解散后嵌入产品线）</td>
-            </tr>
-            <tr>
-              <td class="role">Agent Lifecycle / Governance Lead<span class="role-cn">Agent 生命周期负责人</span></td>
-              <td>管理 agent registry、quarantine、回滚、监控；agent 出问题时拍板下线</td>
-              <td>放权阶梯</td>
-              <td>Salesforce（Agentforce）· AWS（Bedrock Agents）</td>
-            </tr>
-            <tr>
-              <td class="role">AI Trust / Compliance Architect<span class="role-cn">AI 信任 / 合规架构师</span></td>
-              <td>把外部标准（ISO 42001 / NIST RMF / EU AI Act）翻译成产品内的具体审计与门控架构</td>
-              <td>外部标准对齐</td>
-              <td>Salesforce · AWS · Google</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="font-size: 11px; color: var(--ink-mute); font-style: normal;">本节梳理基于 2025–2026 年这 4 家公司公开 careers / engineering blog / responsible AI 网页上反复出现的角色类别，具体 JD title 随时间变化。这里聚焦类别共性，不锁单一职位 ID。</p>
-
-        <p style="margin-top: 22px;">把这张表和 Part 01 LinkedIn 的 130 万新增 AI 岗位放一起看：Head of AI（+130%）、AI Forensic Analyst（+200%）、AI Engineer（3 年 13×）这类"宏观增量"的另一面，就是这些公司在 <strong>治理委员会 + 产品团队嵌入式治理 + Agent Lifecycle Lead</strong> 这套组织结构里持续产生的具体真人岗位。换句话说：LinkedIn 看到的是数字增量，公开 JD 上看到的是数字背后的角色形态。</p>
-      </div>
-
-      <div class="sub-section" id="part3-5">
-        <h3><span class="num">3.5</span>回到问题：大组织复制得了吗</h3>
-        <p>回到开头那个问题——万人级大组织能不能复制小团队的 AI 提效模式？把前面两类样本摆到同一张表里，答案不是简单的能或不能，而是<strong>有条件的"部分能"</strong>：可迁移的是机制，学不来的是结构性红利。</p>
-
-        <h4 style="margin-top: 40px;">大公司 vs 小公司：同一套卡点的两种活法</h4>
-        <p>把 3.3 的 4 家万人级公司和前面 3 家 AI 原生小公司摆在同一张表里，差异不是"谁更先进"，而是<strong>起点完全相反</strong>——这恰好印证了"组织而非技术决定成败"：</p>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th style="width:150px;">维度</th>
-              <th>大公司（万人级）</th>
-              <th>小公司（AI 原生）</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="role">第一层<span class="role-cn">显性合规摩擦</span></td>
-              <td>给 20 年老系统补认证（ISO 42001 / 复用 RBAC）</td>
-              <td>第一天就内建，或把治理当产品卖（GC AI / Duvo 零留存 / HumanLayer 审批闸门）</td>
-            </tr>
-            <tr>
-              <td class="role">第二层<span class="role-cn">内部困难</span></td>
-              <td>摊给既有架构（Sensitivity Labels / CRM 25 年权限）</td>
-              <td>创始人自由重画流程；<strong>但过了单人就撞上同一堵协作墙</strong>（HumanLayer）</td>
-            </tr>
-            <tr>
-              <td class="role">第三层<span class="role-cn">结构性压力</span></td>
-              <td>要靠 sponsor 升到 CEO、写进 OKR 才能跨部门（见 <a href="#part2-3">2.3</a> 半导体案例）</td>
-              <td>创始人天生就是 L4 sponsor，决策权本来就合一</td>
-            </tr>
-            <tr>
-              <td class="role">放权模式<span class="role-cn">Escalation vs Approval</span></td>
-              <td>易被合规拖向 Approval（中位 +30%）</td>
-              <td>天生倾向 Escalation（中位 +71%）（Duvo / Zingage<a class="fn" href="#fn42">[42]</a>）</td>
-            </tr>
-            <tr>
-              <td class="role">组织记忆<span class="role-cn">institutional memory</span></td>
-              <td>sponsor 一换、组织记忆就走（头号脆弱点）</td>
-              <td>创始人不走、记忆稳；代价是迟早撞协作墙</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="font-size: 11px; color: var(--ink-mute); font-style: normal;">数据说明：左列源自 3.3 对 4 家大公司公开治理动作的梳理；右列源自 Anthropic 官方客户案例（成功样本，存在 selection bias）。放权模式两档中位收益（+30% / +71%）来自 Stanford [3]，见 <a href="#part2-3">2.3</a>。</p>
-
-        <p style="margin-top: 22px;">这张表里有三条线索直接接上了 Part 02 的结论：</p>
-
-        <p><strong>第一，放权阶梯是同一把尺子。</strong>2.3 说 Escalation（AI 自主、人审异常）中位生产率 +71%、Approval（事事人批）只 +30%。Duvo、Zingage 就是 Escalation 的活样本；而大公司因为合规和责任压力，更容易被拖回 Approval。小公司不是"更敢放权"，而是<strong>没有那层把它拖回 Approval 的组织阻力</strong>。</p>
-
-        <p><strong>第二，护城河都在编排层，不在模型。</strong>2.3 引 Stanford 的发现是"42% 的实现里底层模型可完全互换，持久优势在 orchestration 层"。Duvo 全栈押注一家模型，护城河恰恰落在"怎么编排跨系统的活 + 怎么把人的决定沉淀进系统"——和大公司的结论完全同向。</p>
-
-        <p><strong>第三，也是最锋利的一条——脆弱性正好镜像。</strong>2.3 指出大公司头号脆弱点是"sponsor 一换，institutional memory 就走"。小公司没有这个问题（创始人不走），但 HumanLayer 证明它有另一个对偶的脆弱点：<strong>长大那一刻的协作墙</strong>。两类公司其实在解同一道题——<strong>组织记忆怎么沉淀下来、怎么跨人传递</strong>。Duvo"人审一次、机器记一辈子"、GC AI 把判断写进共享 playbook，本质都是在把"只存在于人脑里的判断"外化成系统能持有的资产；这也正是 MIT NANDA [29] 诊断大公司 95% 零回报的根因——工具"不会学、不记忆"——在小公司这边被反向解掉的地方。</p>
-
-        <div class="callout">
-          <div class="callout-label">衍化推演</div>
-          <p>如果把小公司的打法往大组织迁移，要分两类看。<strong>可迁移的（不依赖公司大小）</strong>：放权阶梯、把人的每次决定沉淀回系统的"学习闭环"、用例分级——这些大组织完全能学，3.3 里 4 家其实已经在做。<strong>靠先天、学不来的</strong>：创始人即组织、绿地无历史系统——这是小公司的结构性红利，大组织花钱也买不到。所以更现实的判断是：大组织不可能"变成"小公司，但<strong>可以专门去补小公司天然就有、而自己最缺的那一项——把组织记忆从人脑搬进系统</strong>。这也回头给 Part 01 的"衍化"加了一个注脚：岗位价值正从"亲手执行"上移到"写规格、管上下文、做判断"——而判断一旦被系统记住，岗位的形态就又变了一次。</p>
-        </div>
-      </div>
+      <!-- 3.4 / 3.5 已移除 -->
     </section>
 
-<!-- ============ 写在最后 ============ -->
-    <section class="part" id="conclusion">
-      <div class="part-label">Closing · 核心发现</div>
-      <h2>写在最后</h2>
-      <p>读到这里你大概也发现了：这份"宏观岗位地图"不是一张定格图，而是一张<strong>正在变形的地图</strong>。Stanford 的 16% 是 2025 年 9 月的快照，LinkedIn 的 42 倍是 2023 → 2025 的增长曲线，BCG 的 51% 是 2025 年中的截面——三个月之后，每一个数字都可能被新的报告推翻或加强。</p>
-
-      <p>研究的价值不在于"得出最终答案"，而在于<strong>提供一套可以被反复修正的判断框架</strong>。萎缩 / 新增 / 衍化这三类信号不是新发明，但当我们把 6 份报告的数据按这个框架重新组织、再叠加 Anthropic 这样的代表性案例，就能比单看任何一份报告更清楚地看到结构性图景。</p>
-
-      <h3 style="margin-top: 44px;">四个最值得记住的数字</h3>
-      <p>如果只看四个数字来理解 2025–2026 年 AI 对岗位的影响，是这四个——分别对应"先被冲击的人"、"正在涌现的人"、"被悄悄重写职责的人"，以及"组织还没准备好"这件事本身。</p>
-
-      <div class="stat-row four">
-        <div class="cell">
-          <div class="n">−16<span class="unit">%</span></div>
-          <div class="lbl">22-25 岁初级员工在高 AI 暴露岗位的相对就业降幅 <span class="evi-tier evi-direct">直接数据</span></div>
-          <div class="src">Stanford《Canaries in the Coal Mine》2025.11<a class="fn" href="#fn1">[1]</a></div>
-        </div>
-        <div class="cell">
-          <div class="n">130<span class="unit"> 万</span></div>
-          <div class="lbl">过去 3 年（2023→2025）全球新增 AI 相关岗位机会数 <span class="evi-tier evi-direct">直接数据</span></div>
-          <div class="src">LinkedIn Labor Market Report 2026.01<a class="fn" href="#fn4">[4]</a></div>
-        </div>
-        <div class="cell">
-          <div class="n">+70<span class="unit">%</span></div>
-          <div class="lbl">美国"AI Literacy"作为岗位要求的同比增长 <span class="evi-tier evi-direct">直接数据</span></div>
-          <div class="src">LinkedIn Labor Market Report 2026.01<a class="fn" href="#fn4">[4]</a></div>
-        </div>
-        <div class="cell">
-          <div class="n">84<span class="unit">%</span></div>
-          <div class="lbl">企业尚未围绕 AI 重新设计岗位的比例 <span class="evi-tier evi-cited">转引数据</span></div>
-          <div class="src">Deloitte State of AI 2026<a class="fn" href="#fn6">[6]</a></div>
-        </div>
-      </div>
-
-      <h3 style="margin-top: 44px;">我们暂时相信的图景</h3>
-
-      <p>把六份报告叠在一起看，AI 这一轮带来的并不是"机器换人"式的整体替代，而是一次结构性重置。它优先冻结的是"入门通道"——企业很少大规模裁员，但 22-25 岁高 AI 暴露岗位的招聘明显在收缩，Anthropic 干脆取消 internship 通道，是这条判断的强信号。与此同时，新增的岗位呈现明显的两极分布，高技术密度的模型工程岗（AI Engineer、Forward-Deployed PM）和低准入的数据标注、数据中心运维同时大涨，反而是中层的泛化岗最薄弱。绝大多数现有岗位的命运既不是"消失"也不是"升级"，而是"衍化"——名字保留下来，内核被悄悄重写，AI Literacy 在美国岗位要求里同比涨 70% 是这件事的市场化定价。</p>
-
-      <p>组织层面的图景同样不直觉。大企业在 AI 投资和岗位扩张上领先，但传统岗位的收缩也最剧烈，AI 内部渗透率极不均匀，形成一个"规模 = 优势 + 阻力"的悖论。真正的分水岭不在"用没用 AI"，而在"有没有围绕 AI 重新设计工作流"——把 AI 部署给员工容易，把工作流重画很难，普通组织 20%、高绩效组织 55%，2.8 倍差距。Anthropic 30-40 人产品团队、Research PM 嵌入式协作是后者的极端样本。绕开这层重塑、停在"给每人发一个 Copilot"，就是 84% 公司还没围绕 AI 重设计岗位的真实状态——而这件事卡住的根因并不是技术问题，是没有人同时握有"决定流程怎么变 / 决定数据怎么用 / 决定谁背锅"的三组授权，所以 35% 阻力都集中在 Legal / HR / Risk / Compliance 这些 staff function 而不是一线员工身上。</p>
-
-      <p>每一条判断都允许被新证据推翻，关键是更新时说清楚是基于什么改的。把"全球前沿市场已经发生的事"画清楚之后，<strong>我们自己的组织和这张图景的偏差在哪儿——哪些地方是同步的、哪些是落后的、哪些是反向的？</strong>这是判断"接下来应该改什么"的前提，也是这份研究真正想留下的问题。</p>
-    </section>
 
 
     <!-- ============ 附录 · 外部监管与标准地图 ============ -->
